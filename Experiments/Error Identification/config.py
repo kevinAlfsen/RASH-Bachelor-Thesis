@@ -8,7 +8,7 @@ class Config:
     kp = 5
     kd = 0.05
 
-    current_saturation = 1
+    current_saturation = 3
 
     interface_name = "enp4s0"
 
@@ -21,8 +21,8 @@ class Config:
 
     joint_limits = [[3*np.pi for i in range(N_SLAVES * 2)],[-3*np.pi for i in range(N_SLAVES * 2)]]
 
-    zero_calibration =np.array([0.026432,0.0,0.0,0.0,0.0,0.0,0.0,0.0]) #np.array([-0.01950692944,0,0,0,0,0,0,0])
-
+    zero_calibration =np.array([0.02623867,0.0,0.0,0.0,0.0,0.0,0.0,0.0]) #np.array([-0.01950692944,0,0,0,0,0,0,0]) 
+ 
     k_v = [10 for i in range(8)] #max velocity per joint, output space, rad/s
     k_a = [40 for i in range(8)] #max acceleration per joint, output space, rad/s**2
 

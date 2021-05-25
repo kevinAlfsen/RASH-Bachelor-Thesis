@@ -23,8 +23,8 @@ class Config:
 
     zero_calibration =np.array([0.0,0.0,0.0,0.0,0.0,0.0,0.02623867 * 2,0.0]) #np.array([0.02623867,0,0,0,0,0,0,0]) 
  
-    k_v = [5 for i in range(8)] #max velocity per joint, output space, rad/s  #hadde 10
-    k_a = [20 for i in range(8)] #max acceleration per joint, output space, rad/s**2 #hadde 40
+    k_v = [5 for i in range(8)] #max velocity per joint, output space, rad/s  #jump = 10
+    k_a = [20 for i in range(8)] #max acceleration per joint, output space, rad/s**2 #jump = 40
 
     gear_ratio = 9
 

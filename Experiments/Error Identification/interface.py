@@ -104,6 +104,15 @@ class MasterBoardTask:
 
                 else:
                     #Not currently following a trajectory, so try to fetch the next one from the queue
+
+                    position_reading, velocity_reading = self.master_board.get_state()
+
+                    for i in range(Config.num_joints):
+                        self.plotter.add_data(f"Joint {i}, Position Reference", np.degrees(q[i]))
+                        self.plotter.add_data(f"Joint {i}, Position Reading", np.degrees(position_reading[i]))
+                        #self.plotter.add_data(f"Joint {i}, Position Error", np.degrees(q[i] - position_reading[i]))
+                    self.plotter.add_time(t)
+
                     try:
                         self.trajectory = self.trajectory_queue.get(block=False)
                         self.trajectory.set_initial_conditions(q, t) #Last reference sent and current time will be the intitial conditions for the trajectory
